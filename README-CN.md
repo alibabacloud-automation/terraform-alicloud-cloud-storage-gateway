@@ -1,9 +1,9 @@
 Terraform module which creates Cloud Storage Gateway resources on Alibaba Cloud.
 
-terraform-alicloud-clickhouse
+terraform-alicloud-cloud-storage-gateway
 =====================================================================
 
-[English](README.md) | 简体中文
+[English](https://github.com/terraform-alicloud-modules/terraform-alicloud-cloud-storage-gateway/blob/main/README.md) | 简体中文
 
 本 Module 自动化管理云存储网关，包括集群、网关、缓存等，包含：`CloudStorageGateway`。
 
@@ -19,9 +19,11 @@ terraform-alicloud-clickhouse
 module "example" {
   source                  = "terraform-alicloud-modules/cloud-storage-gateway/alicloud"
   #alicloud_cloud_storage_gateway_storage_bundle
+  create_storage_bundle    = true
   storage_bundle_name      = "tf-test-storage-bundle"
   bundle_description       = "tf-test-storage-bundle"
   #alicloud_cloud_storage_gateway_gateway
+  create_gateway           = true
   gateway_description      = "tf-test-gateway"
   gateway_class            = "Standard"
   type                     = "File"
@@ -32,6 +34,7 @@ module "example" {
   location                 = "Cloud"
   gateway_name             = "tf-test-gateway"
   #alicloud_cloud_storage_gateway_gateway_cache_disk
+  create_cache_disk        = true
   cache_disk_category      = "cloud_efficiency"
   cache_disk_size_in_gb    = 50
 }
@@ -50,7 +53,7 @@ module "example" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | > = 1.0.11 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | > = 0.13 |
 | <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | > = 1.144.0 |
 
 ## Providers
