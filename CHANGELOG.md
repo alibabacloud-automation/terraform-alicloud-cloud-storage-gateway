@@ -3,3 +3,4 @@
 ## 1.0.0 (2022-03-24)
 
 - Project initialization. [GH-1](https://github.com/terraform-alicloud-modules/terraform-alicloud-cloud-storage-gateway/pull/1/f)
+- Change the Readme. [GH-2](https://github.com/terraform-alicloud-modules/terraform-alicloud-cloud-storage-gateway/pull/2/f)
