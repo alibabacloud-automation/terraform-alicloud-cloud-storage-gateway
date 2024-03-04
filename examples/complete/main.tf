@@ -12,13 +12,18 @@ module "vpc" {
   availability_zones = [data.alicloud_cloud_storage_gateway_stocks.default.stocks.0.zone_id]
 }
 
+resource "random_integer" "default" {
+  min = 10000
+  max = 99999
+}
+
 
 module "example" {
   source = "../.."
 
   #alicloud_cloud_storage_gateway_storage_bundle
   create_storage_bundle = true
-  storage_bundle_name   = var.storage_bundle_name
+  storage_bundle_name   = "${var.storage_bundle_name}-${random_integer.default.result}"
   bundle_description    = var.bundle_description
 
   #alicloud_cloud_storage_gateway_gateway
